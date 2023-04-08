@@ -24,7 +24,7 @@ namespace Lecture_11
 
         public frmLogin()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Lecture_11
             user3.FullName = "HALA MAHMOUD";
             user3.Username = "HM";
             user3.Password = "1111";
-           
+
             user4 = new User();
             user4.UserId = 4;
             user4.FullName = "SAMI FOUAD";
@@ -76,34 +76,35 @@ namespace Lecture_11
             users.Add(user4);
             users.Add(user5);
             users.Add(user6);
-          
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < users.Count; i++)
+
+            int i = 0;
+            for (; i < users.Count; i++)
             {
-
-                if (users[i].Password == txtPassword.Text)
-                {
+                if (users[i].Password == txtPassword.Text && users[i].Username == txtUsername.Text)
                     MessageBox.Show("Welcome " + users[i].FullName);
-                }
-                
-
-             /* else if (users[i].Username != txtUsername.Text)
-                {
-                    MessageBox.Show("User does not exist");
-                }
-
-
-                else
-                {
-                    MessageBox.Show("Wrong password");
-                }*/
-
 
             }
+
+
+           /* if (users[i].Username != txtUsername.Text)
+            {
+                MessageBox.Show("User does not exist");
+            }
+            else
+            {
+                MessageBox.Show("Wrong password");
+            }*/
+
+
         }
+
+
+
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
@@ -116,3 +117,7 @@ namespace Lecture_11
         }
     }
 }
+
+    
+
+
